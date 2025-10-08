@@ -2,7 +2,7 @@
 import { TokenCounter } from '../../src/lib/token-counter';
 
 // Basic usage example
-const counter = new TokenCounter('gpt-4');
+const counter = new TokenCounter('gpt-4o-mini');
 
 // Count tokens in a simple text
 const text = "Hello, world! This is a sample text.";

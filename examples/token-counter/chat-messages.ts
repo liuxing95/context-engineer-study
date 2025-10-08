@@ -2,7 +2,7 @@
 import { ChatTokenCounter } from '../../src/lib/token-counter';
 
 // Initialize chat token counter
-const chatCounter = new ChatTokenCounter('gpt-4');
+const chatCounter = new ChatTokenCounter('gpt-4o-mini');
 
 // Example chat messages
 const messages = [

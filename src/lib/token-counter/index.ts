@@ -13,10 +13,12 @@ export class TokenCounter {
   encoder: any;
   prices: Record<string, { input: number; output: number }>;
 
-  constructor(model = 'gpt-4') {
+  constructor(model = 'gpt-4o-mini') {
     this.model = model;
     this.encoder = encoding_for_model(model as TiktokenModel);
     this.prices = {
+      'gpt-4o-mini': { input: 0.00015, output: 0.0006 },
+      'gpt-4o': { input: 0.0025, output: 0.01 },
       'gpt-4': { input: 0.03, output: 0.06 },
       'gpt-4-turbo': { input: 0.01, output: 0.03 },
       'gpt-3.5-turbo': { input: 0.0005, output: 0.0015 },
@@ -39,7 +41,7 @@ export class TokenCounter {
   calculateCost(inputText: string, outputText: string) {
     const inputTokens = this.count(inputText);
     const outputTokens = this.count(outputText);
-    const price = this.prices[this.model] || this.prices['gpt-4'];
+    const price = this.prices[this.model] || this.prices['gpt-4o-mini'];
 
     return {
       inputTokens,

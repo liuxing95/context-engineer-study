@@ -9,7 +9,7 @@ export default function TokenCounterPage() {
     { role: 'system', content: 'You are a helpful assistant.' },
     { role: 'user', content: '' }
   ]);
-  const [selectedModel, setSelectedModel] = useState('gpt-4');
+  const [selectedModel, setSelectedModel] = useState('gpt-4o-mini');
   const [counter, setCounter] = useState<ChatTokenCounter | null>(null);
 
   // Initialize counter when model changes
@@ -52,6 +52,8 @@ export default function TokenCounterPage() {
   }, [counter, messages, inputText]);
 
   const models = [
+    { value: 'gpt-4o-mini', label: 'GPT-4o Mini' },
+    { value: 'gpt-4o', label: 'GPT-4o' },
     { value: 'gpt-4', label: 'GPT-4' },
     { value: 'gpt-4-turbo', label: 'GPT-4 Turbo' },
     { value: 'gpt-3.5-turbo', label: 'GPT-3.5 Turbo' },
